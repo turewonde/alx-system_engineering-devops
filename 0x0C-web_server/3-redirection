@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
-# Create redirect
-INDEX_COPY="Hello World!"
-
-sudo apt-get -y update
-sudo apt-get -y install nginx
-echo "$INDEX_COPY" | sudo tee /var/www/html/index.nginx-debian.html > /dev/null
-sudo sed -i '/^\sserver_name.*/a \        rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-available/default
+# Redirection
+apt-get -y update
+apt-get -y install nginx
+echo "Hello world!" > /var/www/html/index.nginx-debian.html
 sudo service nginx start
+llo="\\\trewrite ^/redirect_me https://media.giphy.com/media/wW95fEq09hOI8/giphy.gif permanent;"
+sudo sed -i "42i $llo" /etc/nginx/sites-available/default
+sudo service nginx restart
