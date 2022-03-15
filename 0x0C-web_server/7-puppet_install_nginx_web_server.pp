@@ -18,5 +18,5 @@ nginx::resource::server { '34.73.76.135':
 
 file { 'index':
   path    => '/var/www/html/index.nginx-debian.html',
-  content => 'Holberton School for the win!',
+  content => 'Hello world!',
 }
